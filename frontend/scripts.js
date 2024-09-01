@@ -55,7 +55,8 @@ loginForm.addEventListener('submit', async (e) => {
         await signInWithEmailAndPassword(auth, email, password);
         loginMessage.textContent = 'Login successful!';
         loginForm.reset();
-        // Redirect or perform actions after login
+        // Redirect to the homepage
+        window.location.href = 'homepage.html'; // Change 'homepage.html' to the URL of your homepage
     } catch (error) {
         loginMessage.textContent = 'Error: ' + error.message;
     }

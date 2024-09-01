@@ -3,87 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firebase Authentication Example</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        input {
-            margin-bottom: 10px;
-            padding: 10px;
-            font-size: 16px;
-        }
-        button {
-            padding: 10px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .message {
-            margin-top: 10px;
-            color: red;
-        }
-        .toggle-link {
-            margin-top: 10px;
-            cursor: pointer;
-            color: #007bff;
-        }
-        .toggle-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Authentication</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div id="loginDiv">
+        <div class="form-wrapper" id="loginDiv">
             <h2>Login</h2>
             <form id="loginForm">
-                <input type="email" id="loginEmail" placeholder="Email" required>
-                <input type="password" id="loginPassword" placeholder="Password" required>
+                <div class="input-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
                 <button type="submit">Log In</button>
+                <div class="message" id="loginMessage"></div>
+                <div class="toggle-link" id="showSignup">Don't have an account? Sign Up</div>
             </form>
-            <div class="toggle-link" id="showSignup">Don't have an account? Sign Up</div>
-            <div class="message" id="loginMessage"></div>
         </div>
 
-        <div id="signupDiv" style="display: none;">
+        <div class="form-wrapper" id="signupDiv" style="display: none;">
             <h2>Sign Up</h2>
             <form id="signupForm">
-                <input type="email" id="signupEmail" placeholder="Email" required>
-                <input type="password" id="signupPassword" placeholder="Password" required>
+                <div class="input-group">
+                    <input type="email" id="signupEmail" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                </div>
                 <button type="submit">Sign Up</button>
+                <div class="message" id="signupMessage"></div>
+                <div class="toggle-link" id="showLogin">Already have an account? Log In</div>
             </form>
-            <div class="toggle-link" id="showLogin">Already have an account? Log In</div>
-            <div class="message" id="signupMessage"></div>
         </div>
     </div>
 
     <!-- Firebase App (the core Firebase SDK) -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-
+    
     <!-- Your own JavaScript file -->
     <script type="module" src="scripts.js"></script>
 </body>
