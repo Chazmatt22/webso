@@ -1,5 +1,19 @@
-// Initialize Firebase Authentication
-const auth = firebase.auth();
+// Import Firebase Auth module
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+
+// Initialize Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyCxaE_CkJASq7V5L0injFdbyYiBXTodVts",
+    authDomain: "westminster-64587.firebaseapp.com",
+    projectId: "westminster-64587",
+    storageBucket: "westminster-64587.appspot.com",
+    messagingSenderId: "622409416864",
+    appId: "1:622409416864:web:0183c189c12adebad5c9c5",
+    measurementId: "G-JS4B5CGKHT"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = getAuth();
 
 // Get DOM elements
 const loginForm = document.getElementById('loginForm');
@@ -18,7 +32,7 @@ signupForm.addEventListener('submit', async (e) => {
     const password = document.getElementById('signupPassword').value;
 
     try {
-        await auth.createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(auth, email, password);
         signupMessage.textContent = 'Signup successful! You can now log in.';
         signupForm.reset();
         setTimeout(() => {
@@ -37,7 +51,7 @@ loginForm.addEventListener('submit', async (e) => {
     const password = document.getElementById('loginPassword').value;
 
     try {
-        await auth.signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(auth, email, password);
         loginMessage.textContent = 'Login successful!';
         loginForm.reset();
         // Redirect or perform actions after login
