@@ -8,6 +8,6 @@
     "cors": "^2.8.5"
   },
   "engines": {
-    "node": "16.x" // or the version you're using
+    "node": "16.x"
   }
 }
