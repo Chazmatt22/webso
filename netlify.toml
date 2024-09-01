@@ -1,2 +1,6 @@
 [build]
   functions = "netlify/functions"
+  publish = "frontend" # or wherever your frontend files are located
+
+[functions]
+  node_bundler = "esbuild" # Use esbuild for bundling, or "webpack" if preferred
