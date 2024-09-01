@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    </head>    
 <body>
-    <div class="container">
-        <h1>Welcome to the Homepage!</h1>
-        <p>You have successfully logged in.</p>
+    <div class="alert">
+        Callsiren Dispatch has not yet been set up for your account, please be patient whilst this happens. If this takes longer than 24 hours please open a ticket on our discord.
+    </div>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="path/to/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Applications</a>
+            <a href="#">Roles</a>
+            <a href="#">Roster</a>
+            <a href="#">Account Settings</a>
+        </nav>
+        <div class="profile">
+            <img src="path/to/profile.jpg" alt="Profile" class="profile-pic">
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="card">
+            <h2>Welcome to your new Community</h2>
+            <p>Only Superadmins can see this</p>
+            <button>Getting Started Guide</button>
+        </div>
+
+        <div class="card">
+            <h2>Welcome Charlie Matt</h2>
+            <p>It's Sunday</p>
+            <div class="tools">
+                <button>Add User Record</button>
+            </div>
+            <div class="discord">
+                <img src="path/to/discord.png" alt="Discord">
+                <p>Members Discord</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

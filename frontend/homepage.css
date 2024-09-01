@@ -1,0 +1,176 @@
+/* Existing Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #2b2f3a;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #1f232b;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* Updated Navbar Links */
+.navbar nav {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.navbar nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2a72c9;
+    z-index: -1;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.navbar nav a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar nav a:hover {
+    color: #ffffff;
+    border: 2px solid #2a72c9;
+}
+
+/* Profile Pic */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Main Content and Card Styles */
+.main-content {
+    padding: 20px;
+    padding-top: 60px;
+    background-color: #2b2f3a;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.card p {
+    margin-bottom: 20px;
+    color: #666;
+    font-weight: 300;
+}
+
+/* Button Styles */
+.card button, .tools button {
+    background-color: #348efc;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.card button::before, .tools button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2a72c9;
+    z-index: -1;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.card button:hover::before, .tools button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.card button:hover, .tools button:hover {
+    color: #ffffff;
+    border: 2px solid #2a72c9;
+}
+
+.alert {
+    background-color: #7c5af5;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.tools {
+    margin-top: 20px;
+}
+
+/* Discord Section */
+.discord {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.discord img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
