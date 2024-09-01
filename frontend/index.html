@@ -3,35 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Signup</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>Firebase Auth Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-top: 10px;
+            color: red;
+        }
+        .toggle-link {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #007bff;
+        }
+        .toggle-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h2>Sign Up</h2>
-        <form id="signupForm">
-            <input type="email" id="signupEmail" placeholder="Email" required>
-            <input type="password" id="signupPassword" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
-        </form>
+        <div id="loginDiv">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <div class="toggle-link" id="showSignup">Don't have an account? Sign Up</div>
+            <div class="message" id="loginMessage"></div>
+        </div>
 
-        <h2>Login</h2>
-        <form id="loginForm">
-            <input type="email" id="loginEmail" placeholder="Email" required>
-            <input type="password" id="loginPassword" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-
-        <div id="message"></div> <!-- Placeholder for messages -->
+        <div id="signupDiv" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="toggle-link" id="showLogin">Already have an account? Log In</div>
+            <div class="message" id="signupMessage"></div>
+        </div>
     </div>
 
     <!-- Firebase App (the core Firebase SDK) -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-
-    <!-- Firebase Authentication -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
 
-    <!-- Your custom JavaScript file -->
+    <!-- Your Firebase config -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCxaE_CkJASq7V5L0injFdbyYiBXTodVts",
+            authDomain: "westminster-64587.firebaseapp.com",
+            projectId: "westminster-64587",
+            storageBucket: "westminster-64587.appspot.com",
+            messagingSenderId: "622409416864",
+            appId: "1:622409416864:web:0183c189c12adebad5c9c5",
+            measurementId: "G-JS4B5CGKHT"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Your own JavaScript file -->
     <script src="scripts.js"></script>
 </body>
 </html>
