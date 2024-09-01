@@ -1,5 +1,6 @@
 // Import Firebase Auth module
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -12,8 +13,8 @@ const firebaseConfig = {
     measurementId: "G-JS4B5CGKHT"
 };
 
-firebase.initializeApp(firebaseConfig);
-const auth = getAuth();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 // Get DOM elements
 const loginForm = document.getElementById('loginForm');
